@@ -23,7 +23,7 @@ namespace Pokemon
 
             if (chimchim.attack > piplup.defense)
             {
-                piplup.Hurt(chimchim.attack);
+                piplup.(chimchim.attack);
             }
 
             Console.ReadLine();

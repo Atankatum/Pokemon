@@ -4,6 +4,7 @@ namespace Pokemon
 {
     public class Pokemon
     {
+        private int damageTaken;
         public Random generator = new Random();
         public string name;
         public int hp;
@@ -14,28 +15,25 @@ namespace Pokemon
         public int level;
         private int experienceForLevelUp;
         public string gender;
-    public void Hurt(int amount)
-    {
-        hp -= amount;
-    }
+        float levelCap = 35;
 
     public void Attack(Pokemon enemy)
     {
-        if (attack > enemy.defense)
-        {
-            enemy.hp -= attack - enemy.defense;
-        }
+        
+        damageTaken = attack -= defense;
+        hp -= damageTaken;
+
     }
     public void GainExperience()
     {
-    experience += generator.Next(60, 70);
+    experience += generator.Next(30, 40);
     }
     public void LevelUp()
     {
-    if (experience >= 35)
+    if (experience >= levelCap)
     {
         level++;
-        
+        levelCap *= 1.25f;
     }
     }
     }
