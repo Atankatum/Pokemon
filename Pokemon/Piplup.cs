@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Pokemon
 {
@@ -21,6 +22,7 @@ namespace Pokemon
             {
                 gender = "male";
             } 
+            InitStats();
         }
     }
 }

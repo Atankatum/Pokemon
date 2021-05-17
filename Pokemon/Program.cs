@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Pokemon
 {
@@ -6,27 +7,53 @@ namespace Pokemon
     {
         static void Main(string[] args)
         {
-            Chimchar chimchim = new Chimchar(); 
-            System.Console.WriteLine(chimchim.hp);
-            System.Console.WriteLine(chimchim.attack);
-            System.Console.WriteLine(chimchim.defense);
-            System.Console.WriteLine(chimchim.experience);
-            System.Console.WriteLine(chimchim.level);
-            System.Console.WriteLine(chimchim.speed);
-            System.Console.WriteLine(chimchim.name);
-            System.Console.WriteLine(chimchim.gender);
-
-            Piplup piplup = new Piplup();
-
-
-            chimchim.Attack(piplup);
-
-            if (chimchim.attack > piplup.defense)
-            {
-                piplup.(chimchim.attack);
-            }
-
-            Console.ReadLine();
+         Pokemon Test = new Chimchar();
+         Test.GetStats();
+         Console.ReadLine();
+         Pokemon Enemy = InitEnemy(Test); 
         }
+        //fick hjälp med starten av metoden av casper SAAAAAAAAAAND
+        public static Pokemon InitEnemy(Pokemon player)
+        {
+         Random generator = new Random(); 
+         //om spelaren väljer chimchar, returnera en av de två andra
+         if(player is Chimchar)
+         {
+           if(generator.Next(1,3) == 1)
+           {
+              return(new Piplup());
+           }
+           else if (generator.Next(1,3) == 2)
+           {
+               return(new Turtwig());
+           }
+         }
+
+         //spelare är piplup, returnerar en av de andra pokemon
+          else if (player is Piplup)
+         {
+            if(generator.Next(1,3) == 1)
+                {
+                 return(new Chimchar());
+                }
+            else if (generator.Next(1,3) == 2)
+                {
+                 return(new Turtwig());
+                }
+         }
+                
+        //om spelaren är turtwig, returneras en av de två andra pokemon
+            else if (player is Turtwig)
+            {
+                if (generator.Next(1,3) == 1)
+                {
+                    return(new Chimchar());
+                }
+                else if(generator.Next(1,3) == 2)
+                {
+                    return(new Piplup());
+                }
+            }
+         }
     }
 }
