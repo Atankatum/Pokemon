@@ -14,7 +14,11 @@ namespace Pokemon
          
         public void Attack(Pokemon enemy)
         {      
-            damageTaken = attack -= defense;
+            damageTaken = enemy.attack - defense;
+            if (damageTaken <= 0)
+            {
+                damageTaken = 1;
+            }
             hp -= damageTaken;
         }
 
@@ -34,7 +38,7 @@ namespace Pokemon
 
         public int GetHp()
         {
-            return hp;    
+            return stats["HP:"];    
         }
 
         public string GetName()

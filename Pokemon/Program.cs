@@ -5,6 +5,14 @@ namespace Pokemon
 {
     class Program
     {
+        //RESPONS ATT GÖRA MER
+        //LÄGG TILL FLER ARV (EVOLUTIONS)
+        //GÖR EN LOOP SOM FÖRHINDRAR SPELET ATT KRASCHA (INKLUDERA
+        //TRYPARSE)
+        //GÖR EN LIST / QUEUE FÖR MOTSTÅNDARE 
+        //(FOREACH LOOP SOM LÄGGER TILL BASERAD PÅ EN RANDOMIZER)
+        //KOMMENTERA
+        //GÖR ETT KLASSDIAGRAM MED ARV
         static void Main(string[] args)
         {
          Pokemon Test = new Chimchar();
