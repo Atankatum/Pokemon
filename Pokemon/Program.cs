@@ -15,45 +15,48 @@ namespace Pokemon
         //fick hjälp med starten av metoden av casper SAAAAAAAAAAND
         public static Pokemon InitEnemy(Pokemon player)
         {
-         Random generator = new Random(); 
-         //om spelaren väljer chimchar, returnera en av de två andra
-         if(player is Chimchar)
-         {
-           if(generator.Next(1,3) == 1)
-           {
-              return(new Piplup());
-           }
-           else if (generator.Next(1,3) == 2)
-           {
-               return(new Turtwig());
-           }
-         }
+            Random generator = new Random(); 
+            
+            //om spelaren väljer chimchar, returnera en av de två andra
+            if(player is Chimchar)
+            {
+                if(generator.Next(1,3) == 1)
+                {
+                    return new Piplup();
+                }
+                else
+                {
+                    return new Turtwig();
+                }
+            }
 
-         //spelare är piplup, returnerar en av de andra pokemon
-          else if (player is Piplup)
-         {
-            if(generator.Next(1,3) == 1)
+            //spelare är piplup, returnerar en av de andra pokemon
+            else if (player is Piplup)
+            {
+                if(generator.Next(1,3) == 1)
                 {
-                 return(new Chimchar());
+                return new Chimchar();
                 }
-            else if (generator.Next(1,3) == 2)
+                else
                 {
-                 return(new Turtwig());
+                return new Turtwig();
                 }
-         }
-                
-        //om spelaren är turtwig, returneras en av de två andra pokemon
+            }
+                    
+            //om spelaren är turtwig, returneras en av de två andra pokemon
             else if (player is Turtwig)
             {
                 if (generator.Next(1,3) == 1)
                 {
-                    return(new Chimchar());
+                    return new Chimchar();
                 }
-                else if(generator.Next(1,3) == 2)
+                else
                 {
-                    return(new Piplup());
+                    return new Piplup();
                 }
             }
-         }
+            else 
+                return new Chimchar();
+        }
     }
 }
