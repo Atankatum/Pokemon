@@ -9,10 +9,10 @@ namespace Pokemon
         public Chimchar()
         {
             name = "Chimchar";  
-            hp =  generator.Next(21, 31);
+            hp =  generator.Next(20, 31);
             attack = generator.Next(5, 8);
-            defense = generator.Next(1, 2); 
-            speed = generator.Next(6, 9);
+            defense = generator.Next(3, 5); 
+            speed = generator.Next(6, 10);
             experience = 0;
             level = 5;
             if (generator.NextDouble() > 0.7) 
